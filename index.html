@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do You Love Me?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #FFC0CB; /* Light pink background */
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .question {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333; /* Dark text color */
+      position: absolute;
+      top: 40%; /* Adjusted to be above the center */
+    }
+    .buttons {
+      margin-top: 150px; /* Space between text and buttons */
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #yesBtn {
+      background-color: #90EE90; /* Light green */
+      color: #fff;
+    }
+    #noBtn {
+      background-color: #FF6347; /* Tomato red */
+      color: #fff;
+    }
+    #yesBtn:hover {
+      background-color: #76c7c0; /* Slightly darker green on hover */
+    }
+    #noBtn:hover {
+      background-color: #e5534b; /* Slightly darker red on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="question">Do you love me?</div>
+  <div class="buttons">
+    <button id="yesBtn" onclick="yesClick()">Yes</button>
+    <button id="noBtn" onclick="noClick()">No</button>
+  </div>
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    function noClick() {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.position = 'absolute';
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    }
+    function yesClick() {
+      window.location.href = "secondpage.html";
+    }
+  </script>
+</body>
+</html>
